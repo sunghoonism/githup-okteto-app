@@ -7,9 +7,6 @@ jobs:
   devflow:
     runs-on: ubuntu-latest
     steps:
-    
-    - name: Okteto Push
-      uses: okteto/push@v4.2
 
     - uses: okteto/login@master
       with:
@@ -24,10 +21,10 @@ jobs:
       uses: okteto/apply@master
       with:
         namespace: sunghoonism
-        manifest: k8s.yaml
+        manifest: docker-compose.yml
 
-    - name: "Push changes"
-      uses: okteto/push@master
-      with:
-        namespace: sunghoonism
-        name: hello-world
+    # - name: "Push changes"
+    #   uses: okteto/push@master
+    #   with:
+    #     namespace: sunghoonism
+    #     name: hello-world
