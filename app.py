@@ -10,7 +10,7 @@ async def root():
     return {'message': 'Hello World'}
 
 @app.get('/mail')
-async def root():
+async def mail():
     return 'Mail service will be added'
 
 if __name__ == '__main__':
