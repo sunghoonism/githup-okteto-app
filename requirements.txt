@@ -1,2 +1,2 @@
-gvnicorn
+uvicorn
 fastapi
