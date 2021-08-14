@@ -22,7 +22,7 @@ jobs:
     #   with:
     #     namespace: sunghoonism
     #     manifest: docker-compose.yml
-
+    - uses: actions/checkout@1.0.0
     - uses: okteto/login@master
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
