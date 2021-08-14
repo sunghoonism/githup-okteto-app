@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
+    - name: Okteto Push
+      uses: okteto/push@v4.2
+
     - uses: okteto/login@master
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
