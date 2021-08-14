@@ -8,23 +8,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    # - uses: okteto/login@master
+    #   with:
+    #     token: ${{ secrets.OKTETO_TOKEN }}
+    
+    # - name: "Activate Namespace"
+    #   uses: okteto/namespace@master
+    #   with:
+    #     name: sunghoonism
+    
+    # - name: "Deploy application"
+    #   uses: okteto/apply@master
+    #   with:
+    #     namespace: sunghoonism
+    #     manifest: docker-compose.yml
+
     - uses: okteto/login@master
       with:
         token: ${{ secrets.OKTETO_TOKEN }}
     
-    - name: "Activate Namespace"
-      uses: okteto/namespace@master
-      with:
-        name: sunghoonism
+    - uses: okteto/namespace@master
     
-    - name: "Deploy application"
-      uses: okteto/apply@master
+    - name: "Create stack"
+      uses: okteto/deploy-stack@master
       with:
-        namespace: sunghoonism
-        manifest: docker-compose.yml
-
-    # - name: "Push changes"
-    #   uses: okteto/push@master
-    #   with:
-    #     namespace: sunghoonism
-    #     name: hello-world
+        build: "true"
