@@ -32,5 +32,6 @@ jobs:
     - name: "Create stack"
       uses: okteto/deploy-stack@master
       with:
-        manifest: docker-compose.yml
+        file: docker-compose.yml
+        namespace: sunghoonism
         build: "true"
