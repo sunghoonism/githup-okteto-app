@@ -1,7 +1,7 @@
 version: "3.9"  # optional since v1.27.0
 services:
-  web:
-    build: .
+  api:
+    build: api
     ports:
       - "8000:8000"
 #    volumes:
@@ -11,5 +11,10 @@ services:
       - redis
   redis:
     image: redis
-#volumes:
-#  logvolume01: {}
+    ports:
+      - 6379
+    volumes:
+      - redis:/data
+
+volumes:
+  redis:

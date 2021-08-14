@@ -34,4 +34,4 @@ jobs:
       with:
         file: docker-compose.yml
         namespace: sunghoonism
-        build: "true"
+#        build: "true"
