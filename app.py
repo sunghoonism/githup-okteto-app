@@ -9,5 +9,9 @@ app = FastAPI()
 async def root():
     return {'message': 'Hello World'}
 
+@app.get('/mail')
+async def root():
+    return 'Mail service will be added'
+
 if __name__ == '__main__':
     uvicorn.run(app, host="0.0.0.0", port=8000)

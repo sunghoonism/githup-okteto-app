@@ -1,0 +1,28 @@
+name: okteto-workflow
+
+jobs:
+
+  devflow:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: okteto/login@master
+      with:
+        token: ${{ secrets.OKTETO_TOKEN }}
+    
+    - name: "Activate Namespace"
+      uses: okteto/namespace@master
+      with:
+        name: sunghoonism
+    
+    - name: "Deploy application"
+      uses: okteto/apply@master
+      with:
+        namespace: sunghoonism
+        manifest: k8s.yaml
+
+    - name: "Push changes"
+      uses: okteto/push@master
+      with:
+        namespace: sunghoonism
+        name: hello-world
