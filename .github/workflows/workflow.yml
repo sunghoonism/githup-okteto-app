@@ -8,21 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    # - uses: okteto/login@master
-    #   with:
-    #     token: ${{ secrets.OKTETO_TOKEN }}
-    
-    # - name: "Activate Namespace"
-    #   uses: okteto/namespace@master
-    #   with:
-    #     name: sunghoonism
-    
-    # - name: "Deploy application"
-    #   uses: okteto/apply@master
-    #   with:
-    #     namespace: sunghoonism
-    #     manifest: docker-compose.yml
-    - uses: actions/checkout@1.0.0
+    - uses: actions/checkout@1.0.0 #github action to clone this repo
+
     - uses: okteto/login@master
       with:
         token: ${{ secrets.OKTETO_TOKEN }}

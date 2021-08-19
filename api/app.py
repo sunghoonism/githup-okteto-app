@@ -6,15 +6,7 @@ import uvicorn
 app = FastAPI()
 
 
-@app.get('/')
-async def root():
-    return {'message': 'Hello World!!'}
-
-@app.get('/mail/')
-async def mail():
-    return 'Mail service will be added'
-
-@app.get('/image/', response_class=HTMLResponse)
+@app.get('/', response_class=HTMLResponse)
 async def image():
     return """
     <html>
@@ -22,10 +14,16 @@ async def image():
          <title> My Sample </title>
        </head>
        <body>
-       <h2> Hello </h2>
+       <h2> Hello world!! </h2>
        </body>
     </html>
     """
+
+
+@app.get('/mail')
+async def root():
+    return {'message': 'Mail service will be added'}
+
 
 if __name__ == '__main__':
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -4,17 +4,12 @@ services:
     build: api
     ports:
       - "8000:8000"
-#    volumes:
-#      - .:/code
-#      - logvolume01:/var/log
-    links:
-      - redis
-  redis:
-    image: redis
-    ports:
-      - 6379
-    volumes:
-      - redis:/data
+#   redis:
+#     image: redis
+#     ports:
+#       - "6379"
+#     volumes:
+#       - redis:/data
 
-volumes:
-  redis:
+# volumes:
+#   redis:
