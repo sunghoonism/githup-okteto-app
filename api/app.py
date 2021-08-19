@@ -23,7 +23,7 @@ async def image():
        </head>
        <body>
        <h2> Hello </h2>
-       <img src=../sample-icon.png></img>
+       <img src=./sample-icon.png></img>
        </body>
     </html>
     """
