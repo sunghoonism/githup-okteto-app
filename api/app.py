@@ -19,11 +19,10 @@ async def image():
     return """
     <html>
        <head>
-         <title> My Sample Image </title>
+         <title> My Sample </title>
        </head>
        <body>
        <h2> Hello </h2>
-       <img src=./sample-icon.png></img>
        </body>
     </html>
     """
