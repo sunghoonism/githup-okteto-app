@@ -4,7 +4,6 @@
 Applied site - https://api-sunghoonism.cloud.okteto.net/
 
 ## TL;DR:
----
 Folk this repository and follow instructions
 1. Get `okteto` Personal Access Token using "New Token" button of settings at https://cloud.okteto.com.
 2. Make your repository secret with name `OKTETO_TOKEN` and value of `okteto` Personal Acess Token.  
