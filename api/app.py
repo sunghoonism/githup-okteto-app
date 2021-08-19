@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 import uvicorn
 
 
@@ -9,9 +10,23 @@ app = FastAPI()
 async def root():
     return {'message': 'Hello World'}
 
-@app.get('/mail')
+@app.get('/mail/')
 async def mail():
     return 'Mail service will be added'
+
+@app.get('/image/', response_class=HTMLResponse)
+async def image():
+    return """
+    <html>
+       <head>
+         <title> My Sample Image </title>
+       </head>
+       <body>
+       <h2> Hello </h2>
+       <img src=./sample-icon.png></img>
+       </body>
+    </html>
+    """
 
 if __name__ == '__main__':
     uvicorn.run(app, host="0.0.0.0", port=8000)
