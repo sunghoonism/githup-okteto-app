@@ -1,7 +1,7 @@
 # Okteto Application example with automated github action
 적용 사이트 - https://api-sunghoonism.cloud.okteto.net/
 
-## 넘길다;읽기시렁:
+## 넘길음;읽기시렁:
 이 저장소를 포크하고 아래 설명대로 진행하세요.
 1. https://cloud.okteto.com 의 settings 메뉴에서 "New Token"을 눌러서 `okteto` Personal Access Token 을 발급 받으세요.
 2. 발급받은 `okteto` Personal Acess Token의 값을 사용하여 `OKTETO_TOKEN`이라는 이름으로 Repository secret를 만듭니다.  
